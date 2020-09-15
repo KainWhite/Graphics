@@ -116,6 +116,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -141,11 +142,17 @@
   <ItemGroup>
     <ClInclude Include="Controllers\FileController.h" />
     <ClInclude Include="Controllers\InputController.h" />
+    <ClInclude Include="DTOs\ParsedObjFile.h" />
+    <ClInclude Include="Entities\Polygon.h" />
+    <ClInclude Include="Entities\PolygonVertice.h" />
+    <ClInclude Include="Entities\Vertice.h" />
+    <ClInclude Include="Entities\VerticeNorm.h" />
+    <ClInclude Include="Entities\VerticeTexture.h" />
+    <ClInclude Include="Enums\ObjFileObject.h" />
+    <ClInclude Include="Extensions\StringExtensions.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Graphics.h" />
-    <ClInclude Include="Models\ObjFileNames.h" />
-    <ClInclude Include="Models\ParsedObjFileModel.h" />
-    <ClInclude Include="Models\Vertice.h" />
+    <ClInclude Include="Models\MainState.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>

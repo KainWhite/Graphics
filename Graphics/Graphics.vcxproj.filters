@@ -16,14 +16,23 @@
     <Filter Include="Header Files\Controllers">
       <UniqueIdentifier>{0dec3ea9-b61a-4cd0-ab70-17511d25a8aa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Models">
-      <UniqueIdentifier>{bd6ea7d1-c04c-4d75-9e97-5d15d9a0d4db}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Controllers">
       <UniqueIdentifier>{1cc2b582-0f04-440c-a927-eff0fcd6e141}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Enums">
       <UniqueIdentifier>{d93169a0-c9f4-4077-8857-9b00a7bfe68b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Entities">
+      <UniqueIdentifier>{eca4cbcf-d9cb-421f-ac63-f876aa330367}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Extensions">
+      <UniqueIdentifier>{67fab4d1-20be-4bb6-99a2-3e16efa0d813}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\DTOs">
+      <UniqueIdentifier>{bd6ea7d1-c04c-4d75-9e97-5d15d9a0d4db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Models">
+      <UniqueIdentifier>{5a3d54cd-88bb-413f-81ed-bbfef7762ef1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -45,14 +54,32 @@
     <ClInclude Include="Controllers\FileController.h">
       <Filter>Header Files\Controllers</Filter>
     </ClInclude>
-    <ClInclude Include="Models\ParsedObjFileModel.h">
-      <Filter>Header Files\Models</Filter>
-    </ClInclude>
-    <ClInclude Include="Models\Vertice.h">
-      <Filter>Header Files\Models</Filter>
-    </ClInclude>
-    <ClInclude Include="Models\ObjFileNames.h">
+    <ClInclude Include="Enums\ObjFileObject.h">
       <Filter>Header Files\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Entities\VerticeNorm.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Entities\Vertice.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Entities\VerticeTexture.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Entities\Polygon.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Entities\PolygonVertice.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Extensions\StringExtensions.h">
+      <Filter>Header Files\Extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\MainState.h">
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="DTOs\ParsedObjFile.h">
+      <Filter>Header Files\DTOs</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
