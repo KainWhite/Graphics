@@ -34,6 +34,12 @@
     <Filter Include="Header Files\Models">
       <UniqueIdentifier>{5a3d54cd-88bb-413f-81ed-bbfef7762ef1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Core">
+      <UniqueIdentifier>{54a82579-98ff-4b8d-9e4b-5a7748f36d46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core">
+      <UniqueIdentifier>{445d29b5-62b0-4af6-900f-0af7f6932532}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -75,11 +81,14 @@
     <ClInclude Include="Extensions\StringExtensions.h">
       <Filter>Header Files\Extensions</Filter>
     </ClInclude>
-    <ClInclude Include="Models\MainState.h">
-      <Filter>Header Files\Models</Filter>
-    </ClInclude>
     <ClInclude Include="DTOs\ParsedObjFile.h">
       <Filter>Header Files\DTOs</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\MainModel.h">
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Matrix.h">
+      <Filter>Header Files\Core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +100,9 @@
     </ClCompile>
     <ClCompile Include="Controllers\FileController.cpp">
       <Filter>Source Files\Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Matrix.cpp">
+      <Filter>Source Files\Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

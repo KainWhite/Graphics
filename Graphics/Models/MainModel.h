@@ -16,6 +16,8 @@ class MainModel {
   MainModel(HWND hwnd) : hwnd(hwnd) {}
 
   void LoadState(ParsedObjFile const &state);
+
+  void Translate(int x, int y, int z);
 };
 
 #endif // !MAINMODEL

@@ -1,16 +1,16 @@
 #ifndef VERTICE
 #define VERTICE
 
+#include "../Core/Matrix.h"
+
 namespace Entities {
 
 class Vertice {
  public:
-  double x;
-  double y;
-  double z;
-  double w;
-  Vertice() {}
-  Vertice(double x, double y, double z, double w = 1): x(x), y(y), z(z), w(w) {}
+  Matrix position;
+
+  Vertice(): position(Matrix(3, 1)) {}
+  Vertice(Matrix position): position(position) {}
 };
 
 } // Entities namespace

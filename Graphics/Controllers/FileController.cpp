@@ -42,14 +42,19 @@ Entities::Vertice FileController::ParseVertice(
     std::vector<std::wstring> const &splittedVerticeString) {
   switch (splittedVerticeString.size()) {
     case 4:
-      return Entities::Vertice(StringToDouble(splittedVerticeString[1]),
-                               StringToDouble(splittedVerticeString[2]),
-                               StringToDouble(splittedVerticeString[3]));
+      return Entities::Vertice(std::vector<std::vector<double>>{
+        {StringToDouble(splittedVerticeString[1])},
+        {StringToDouble(splittedVerticeString[2])},
+        {StringToDouble(splittedVerticeString[3])},
+        {1}
+      });
     case 5:
-      return Entities::Vertice(StringToDouble(splittedVerticeString[1]),
-                               StringToDouble(splittedVerticeString[2]),
-                               StringToDouble(splittedVerticeString[3]),
-                               StringToDouble(splittedVerticeString[4]));
+      return Entities::Vertice(std::vector<std::vector<double>>{
+        {StringToDouble(splittedVerticeString[1])},
+        {StringToDouble(splittedVerticeString[2])},
+        {StringToDouble(splittedVerticeString[3])},
+        {StringToDouble(splittedVerticeString[4])}
+      });
   }
 }
 
