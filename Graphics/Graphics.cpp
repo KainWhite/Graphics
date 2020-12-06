@@ -1,17 +1,22 @@
 ﻿// Graphics.cpp : Defines the entry point for the application.
 //
 
+#include <iostream>
 #include "framework.h"
 #include "commdlg.h"
 #include "Graphics.h"
 #include "Controllers/FileController.h"
+#include "Controllers/ViewController.h"
 #include "Models/MainModel.h"
 
 #define MAX_LOADSTRING 100
 
 // Global Variables:
+HWND *hwnd = new HWND;
 FileController fileController;
-MainModel *mainModel;
+MainModel mainModel;
+ViewController viewController(hwnd);
+
 
 HINSTANCE hInst;  // current instance
 WCHAR szTitle[MAX_LOADSTRING];  // The title bar text
@@ -47,14 +52,20 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
   MSG msg;
 
-  // Main message loop:
-  while (GetMessage(&msg, nullptr, 0, 0)) {
-    if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg)) {
-      TranslateMessage(&msg);
-      DispatchMessage(&msg);
+  try {
+    while (GetMessage(&msg, nullptr, 0, 0)) {
+      if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg)) {
+        TranslateMessage(&msg);
+        DispatchMessage(&msg);
+      }
     }
+  } catch (std::exception& ex) {
+    std::cerr << ex.what() << std::endl;
+  } catch (...) {
+    std::cerr << "Caught unknown exception." << std::endl;
   }
-
+    
+  delete hwnd;
   return (int)msg.wParam;
 }
 
@@ -81,26 +92,24 @@ ATOM MyRegisterClass(HINSTANCE hInstance) {
 BOOL InitInstance(HINSTANCE hInstance, int nCmdShow) {
   hInst = hInstance;  // Store instance handle in our global variable
 
-  HWND hWnd = CreateWindowW(szWindowClass,
-                            szTitle,
-                            WS_OVERLAPPEDWINDOW,
-                            CW_USEDEFAULT,
-                            0,
-                            CW_USEDEFAULT,
-                            0,
-                            nullptr,
-                            nullptr,
-                            hInstance,
-                            nullptr);
+  *hwnd = CreateWindowW(szWindowClass,
+                       szTitle,
+                       WS_OVERLAPPEDWINDOW,
+                       CW_USEDEFAULT,
+                       0,
+                       CW_USEDEFAULT,
+                       0,
+                       nullptr,
+                       nullptr,
+                       hInstance,
+                       nullptr);
 
-  if (!hWnd) {
+  if (!*hwnd) {
     return FALSE;
   }
 
-  mainModel = &MainModel(hWnd);
-
-  ShowWindow(hWnd, nCmdShow);
-  UpdateWindow(hWnd);
+  ShowWindow(*hwnd, nCmdShow);
+  UpdateWindow(*hwnd);
 
   return TRUE;
 }
@@ -130,7 +139,7 @@ LRESULT CALLBACK WndProc(HWND hWnd,
     case WM_PAINT: {
       PAINTSTRUCT ps;
       HDC hdc = BeginPaint(hWnd, &ps);
-      // TODO: Add any drawing code that uses hdc here...
+      viewController.DrawModel(hdc, mainModel);
       EndPaint(hWnd, &ps);
     } break;
     case WM_DESTROY:
@@ -160,8 +169,10 @@ void HandleOpenFile(HWND hWnd) {
   ofn.Flags = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST;
 
   if (GetOpenFileName(&ofn)) {
-    auto x = fileController.ParseObjFile(ofn.lpstrFile);
-    int a = 1;
+    auto model = fileController.ParseObjFile(ofn.lpstrFile);
+    mainModel.LoadState(model);
+    mainModel.Translate(0, 0, 10);
+    InvalidateRect(*hwnd, nullptr, false);
   }
 }
 

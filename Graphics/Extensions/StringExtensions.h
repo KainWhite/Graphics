@@ -9,7 +9,7 @@ std::vector<std::wstring> Split(std::wstring const &str,
                                 bool splitWhenMultipleDelimiterInARow = true) {
   std::vector<std::wstring> result;
   result.push_back(L"");
-  for (int i = 0; i < str.size(); i++) {
+  for (auto i = 0; i < str.size(); i++) {
     if (str[i] == delimiter) {
       if (!splitWhenMultipleDelimiterInARow) {
         while (str[i] == delimiter) {

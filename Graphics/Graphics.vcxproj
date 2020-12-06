@@ -88,6 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -142,6 +143,7 @@
   <ItemGroup>
     <ClInclude Include="Controllers\FileController.h" />
     <ClInclude Include="Controllers\InputController.h" />
+    <ClInclude Include="Controllers\ViewController.h" />
     <ClInclude Include="Core\Matrix.h" />
     <ClInclude Include="DTOs\ParsedObjFile.h" />
     <ClInclude Include="Entities\Polygon.h" />
@@ -160,8 +162,10 @@
   <ItemGroup>
     <ClCompile Include="Controllers\FileController.cpp" />
     <ClCompile Include="Controllers\InputController.cpp" />
+    <ClCompile Include="Controllers\ViewController.cpp" />
     <ClCompile Include="Core\Matrix.cpp" />
     <ClCompile Include="Graphics.cpp" />
+    <ClCompile Include="Models\MainModel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Graphics.rc" />

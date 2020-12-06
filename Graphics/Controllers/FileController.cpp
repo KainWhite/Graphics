@@ -86,7 +86,7 @@ Entities::VerticeTexture FileController::ParseVerticeTexture(
 Entities::Polygon FileController::ParsePolygon(
     std::vector<std::wstring> const &splittedPolygonString) {
   Entities::Polygon polygon;
-  for (int i = 1; i < splittedPolygonString.size(); i++) {
+  for (auto i = 1; i < splittedPolygonString.size(); i++) {
     polygon.vertices.push_back(ParsePolygonVertice(splittedPolygonString[i]));
   }
   return polygon;

@@ -40,6 +40,9 @@
     <Filter Include="Source Files\Core">
       <UniqueIdentifier>{445d29b5-62b0-4af6-900f-0af7f6932532}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Models">
+      <UniqueIdentifier>{3094f53a-f799-471f-9ffb-3c7783957f74}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -90,6 +93,9 @@
     <ClInclude Include="Core\Matrix.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
+    <ClInclude Include="Controllers\ViewController.h">
+      <Filter>Header Files\Controllers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Graphics.cpp">
@@ -103,6 +109,12 @@
     </ClCompile>
     <ClCompile Include="Core\Matrix.cpp">
       <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\MainModel.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Controllers\ViewController.cpp">
+      <Filter>Source Files\Controllers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
